@@ -11,7 +11,7 @@ namespace CARRITO_DE_COMPRAS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            CartItemsCount.Text += "300";
         }
     }
 }
