@@ -4,7 +4,6 @@
 
 <html>
 
-
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
@@ -15,15 +14,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 
+
+
 <body data-bs-theme="dark">
     <form id="form1" runat="server">
         <div>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Grupo 10</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <%--<button class="navbar-toggler" type="button" runat="server" ID="btnCarrito" onclick="btnCarrito_Click" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button>--%>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -37,9 +38,10 @@
               <asp:Label Text="" ID="CartItemsCount" runat="server" />
           </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle px-" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Carrito
-          </a>
+        
+            <asp:Button class="nav-link" ID="btnCarrito" runat="server" Text="Carrito" OnClick="btnCarrito_Click">   
+            </asp:Button>
+
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -57,7 +59,7 @@
 </nav>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                
-             <h2>Master page</h2>
+             
             </asp:ContentPlaceHolder>
 
           
@@ -108,5 +110,7 @@
     </div>
 
     </form>
+
+
 </body>
 </html>
