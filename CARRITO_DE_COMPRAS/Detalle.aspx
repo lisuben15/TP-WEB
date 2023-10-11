@@ -7,11 +7,27 @@
     
               <div class="col">
                 <div class="card">
-                  <img src="<%:articulo.UrlImagen %>" class="card-img-top" alt="...">
+                  <img style="max-width:300px;" src="<%:articulo.UrlImagen %>" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title"><%:articulo.Nombre %></h5>
-                    <p class="card-text"><%:articulo.Precio %></p>
-                            
+
+                      <asp:Label ID="Label1" runat="server" Text="Nombre del producto "></asp:Label>
+                      <p class="card-text"><%:articulo.Nombre %></p>
+                      
+                      <asp:Label ID="Label2" runat="server" Text="Codigo "></asp:Label>
+                      <p class="card-text"><%:articulo.Codigo %></p>
+
+                      <asp:Label ID="Label5" runat="server" Text="Marca"></asp:Label>
+                      <p class="card-text"><%:articulo.Marca.Descripcion %></p>
+                      
+                      <asp:Label ID="Label3" runat="server" Text="Descripción"></asp:Label>
+                      <p class="card-text"><%:articulo.Descripcion %></p>
+                     
+                      <asp:Label ID="Label4" runat="server" Text="Precio"></asp:Label>
+                      <p class="card-text"><%:articulo.Precio %></p> 
+                       
+                      <asp:Label ID="Label6" runat="server" Text="Categoria"></asp:Label>
+                      <p class="card-text"><%:articulo.Categoria.Descripcion %></p>
+                      
                   </div>
                 </div>
               </div>

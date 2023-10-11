@@ -255,7 +255,7 @@ namespace negocio
             }
         }
 
-        public Articulo detallarArticulo ( string Codigo)
+        public Articulo detallarArticulo (string Codigo)
         {
             AccesoDatos datos = new AccesoDatos();
             
