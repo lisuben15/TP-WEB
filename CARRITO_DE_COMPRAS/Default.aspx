@@ -17,7 +17,7 @@
                     <h5 class="card-title"><%:articulo.Nombre %></h5>
                     <p class="card-text"><%:articulo.Precio %></p>
                       <div>
-                          <asp:Button ID="btnDetalle" runat="server" Text="Ver detalle" OnClick="btnDetalle_Click" />
+                          <a href="Detalle.aspx?=<%:articulo.Codigo %>">Ver detalle</a>
                       </div>
                       <br />
                       <div> <asp:Button style="background-color:black ; color:white" ID="btnAgregar" runat="server" Text="Agregar al carrito" OnClick="btnAgregar_Click"/></div>

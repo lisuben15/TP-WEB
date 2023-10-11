@@ -26,10 +26,5 @@ namespace CARRITO_DE_COMPRAS
             //capturar articulo y guardar a listaCarrito
         }
 
-        protected void btnDetalle_Click(object sender, EventArgs e)
-        {
-            // 
-            Response.Redirect("Detalle.aspx");
-        }
     }
 }
