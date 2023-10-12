@@ -14,33 +14,43 @@ namespace CARRITO_DE_COMPRAS
         public List<Articulo> ListaArticulo { get; set; }
         public List<Articulo> listaCarrito { get; set; }
 
-        public Articulo articulo { get; set; }  
+        public Articulo articulo { get; set; }
 
-
+        public Página1()
+        {
+            listaCarrito = new List<Articulo>();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-            ServicioArticulo servicioArticulo = new ServicioArticulo();
-            ListaArticulo = servicioArticulo.ListarArticulosSP(); // lo que traemos de la DB lo guardamos en la lista
+            // lo que traemos de la DB lo guardamos en la lista
+            if (!IsPostBack)
+            {
+                ServicioArticulo servicioArticulo = new ServicioArticulo();
+                ListaArticulo = servicioArticulo.ListarArticulosSP();
+                Repetidor1.DataSource = ListaArticulo;
+                Repetidor1.DataBind();
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             Articulo articulo = new Articulo();
-            List<Articulo> listaCarrito = new List<Articulo>();
+            
+            ServicioArticulo servicioArticulo = new ServicioArticulo();
+            
+            string valor = ((Button)sender).CommandArgument;
+            articulo=servicioArticulo.detallarArticulo(valor);
 
-            articulo.Codigo = Request.QueryString["Codigo"];
-            articulo.Nombre = Request.QueryString["Nombre"];
-            articulo.Descripcion = Request.QueryString["Descripcion"];
-            articulo.Precio =decimal.Parse(Request.QueryString["Precio"]);
-            articulo.UrlImagen = Request.QueryString["Urlimagen"];
-            //articulo.Marca.Descripcion = Request.QueryString["Marca"];
-            // articulo.Categoria.Descripcion= Request.QueryString["Categoria"];
-            articulo.Marca = new Marca { Descripcion = Request.QueryString["Marca"] }; 
-            articulo.Categoria = new Categoria { Descripcion = Request.QueryString["Categoria"] }; 
-            listaCarrito.Add(articulo);
-            Session["listaCarrito"] = listaCarrito;
-            Response.Redirect("Carrito.aspx");
-            //capturar articulo y guardar a listaCarrito
+            if (Session["listaCarrito"] != null)
+            {
+                listaCarrito = (List<Articulo>)Session["listaCarrito"];
+            }
+
+             listaCarrito.Add(articulo);
+             Session["listaCarrito"] = listaCarrito;          
+          
+
+           
         }
 
     }
