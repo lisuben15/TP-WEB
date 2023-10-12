@@ -5,6 +5,23 @@
     <h1>MI CARRITO</h1>
 
     <div>
+        <%
+
+            foreach (dominio.Articulo articulo in listaCarrito)
+             {
+            %>
+                  <div class="col">
+                    <div class="card">
+                      <img style="max-width:120px;" src="<%:articulo.UrlImagen %>" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title"><%:articulo.Nombre %></h5>
+                        <p class="card-text"><%:articulo.Precio %></p>
+                         
+                      </div>
+                    </div>
+                  </div>
+
+         <% } %>
 
    </div>
 

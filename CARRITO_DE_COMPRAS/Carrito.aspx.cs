@@ -15,7 +15,18 @@ namespace CARRITO_DE_COMPRAS
         protected void Page_Load(object sender, EventArgs e)
 		{
            
-            //listaCarrito =;    // se debria guardar cada articulo a la lista
+                if (Session["listaCarrito"] != null)
+                {
+                    List<Articulo> listaCarrito = (List<Articulo>)Session["listaCarrito"];
+                    
+                }
+                else
+                {
+                      
+                    
+                }
+            
+            
         }
 	}
 }
