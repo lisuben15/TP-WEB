@@ -13,7 +13,6 @@ namespace CARRITO_DE_COMPRAS
     {
         public List<Articulo> ListaArticulo { get; set; }
         public List<Articulo> listaCarrito { get; set; }
-
         public Articulo articulo { get; set; }
 
         public Página1()
@@ -34,8 +33,7 @@ namespace CARRITO_DE_COMPRAS
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Articulo articulo = new Articulo();
-            
+            Articulo articulo = new Articulo();          
             ServicioArticulo servicioArticulo = new ServicioArticulo();
             
             string valor = ((Button)sender).CommandArgument;
@@ -43,14 +41,12 @@ namespace CARRITO_DE_COMPRAS
 
             if (Session["listaCarrito"] != null)
             {
-                listaCarrito = (List<Articulo>)Session["listaCarrito"];
+                listaCarrito = (List<Articulo>)Session["listaCarrito"]; 
             }
 
              listaCarrito.Add(articulo);
              Session["listaCarrito"] = listaCarrito;          
-          
-
-           
+                   
         }
 
     }
