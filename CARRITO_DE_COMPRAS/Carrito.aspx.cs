@@ -68,13 +68,9 @@ namespace CARRITO_DE_COMPRAS
 
             listaCarrito = (List<Articulo>)Session["listaCarrito"];
             Articulo articulo = new Articulo();
-            foreach (var item in listaCarrito)
-            {
-                if (item.Codigo == valor)
-                {
-                    articulo = item;
-                }
-            }
+
+            articulo = listaCarrito.Find(x => x.Codigo == valor);
+
             listaCarrito.Remove(articulo);
             Response.Redirect("Carrito.aspx");
         }
