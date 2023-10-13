@@ -62,5 +62,21 @@ namespace CARRITO_DE_COMPRAS
             Session["listaCarrito"] = listaAux;
             Response.Redirect("Carrito.aspx");
         }
+        protected void btnEliminarUno_Click(object sender, EventArgs e)
+        {
+            string valor = ((Button)sender).CommandArgument;
+
+            listaCarrito = (List<Articulo>)Session["listaCarrito"];
+            Articulo articulo = new Articulo();
+            foreach (var item in listaCarrito)
+            {
+                if (item.Codigo == valor)
+                {
+                    articulo = item;
+                }
+            }
+            listaCarrito.Remove(articulo);
+            Response.Redirect("Carrito.aspx");
+        }
     }
 }

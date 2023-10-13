@@ -3,16 +3,21 @@
 
 
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="row row-cols-1 row-cols-md-5 g-5">
       
         <asp:Repeater ID="Repetidor1" runat="server">
             <ItemTemplate>
-                    <div class="col">
-                      <div class="card">
+                    <div class="col ml-3px mt-5px">
+                      <div class="card" style="width:300px;height:400px">
                           <div class="row justify-content-center">
-                        <img style="max-width:150px;" src="<%#Eval("UrlImagen") %>" class="card-img-top" alt="...">
+                       <button class="carousel-control-prev-icon" aria-hidden="true" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+                     </button>
+                        <img style="width:250px;" src="<%#Eval("UrlImagen") %>" class="card-img-top" alt="...">
+                     <button class="carousel-control-next-icon" aria-hidden="true" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+                     </button>
                         <div class="card-body">
                           <h5 class="card-title"><%#Eval("Nombre") %></h5>
                           <p class="card-text"><%#Eval("Precio") %></p>
@@ -20,7 +25,8 @@
                                 <a href="Detalle.aspx?Codigo=<%#Eval("Codigo") %>">Ver detalle</a>
                             </div>
                             <br />
-                            <div> <asp:Button style="background-color:purple ; color:white" ID="btnAgregar" runat="server" Text="Agregar al carrito" OnClick="btnAgregar_Click" CommandArgument='<%#Eval("Codigo") %>' CommandName="Codigo"/></div>
+
+                             <div class="position-absolute bottom-0 end-0 mb-2 mr-5"> <asp:Button style="background-color:purple ; color:white" ID="btnAgregar" runat="server" Text="Agregar al carrito" OnClick="btnAgregar_Click" CommandArgument='<%#Eval("Codigo") %>' CommandName="Codigo"/></div>
                             </div>
                         </div>
                       </div>

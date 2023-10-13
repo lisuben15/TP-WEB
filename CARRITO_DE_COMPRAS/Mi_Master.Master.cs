@@ -1,4 +1,6 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,14 +12,24 @@ namespace CARRITO_DE_COMPRAS
 {
     public partial class Mi_Master : System.Web.UI.MasterPage
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            CartItemsCount.Text += "300";
+            List<Articulo> listaCarrito = (List<Articulo>)Session["listaCarrito"];
+            if (Session["listaCarrito"] == null)
+            {
+                CartItemsCount.Text = "0";
+            }
+            else
+            {
+                CartItemsCount.Text = listaCarrito.Count.ToString();
+            }
         }
 
         protected void btnCarrito_Click(object sender, EventArgs e)
         {
             Response.Redirect("Carrito.aspx");
         }
+
     }
 }

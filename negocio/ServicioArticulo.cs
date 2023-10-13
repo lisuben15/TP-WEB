@@ -138,8 +138,8 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                // datos.setearConsulta("SELECT a.Id, Codigo, Nombre, a.Descripcion, m.Id as IdMarca, m.Descripcion AS Marca, c.Id as IdCategoria, c.Descripcion AS Categoria, Precio, i.ImagenUrl FROM ARTICULOS a INNER JOIN MARCAS m ON  a.IdMarca = m.Id INNER JOIN CATEGORIAS c ON a.IdCategoria = c.Id LEFT JOIN IMAGENES i ON a.Id = i.IdArticulo");
-                datos.setearProcedimiento("SP_Listar"); // SP_Listar es el nombre de procedimiento que creamos en DB
+                 datos.setearConsulta("SELECT a.Id, Codigo, Nombre, a.Descripcion, m.Id as IdMarca, m.Descripcion AS Marca, c.Id as IdCategoria, c.Descripcion AS Categoria, Precio, i.ImagenUrl FROM ARTICULOS a INNER JOIN MARCAS m ON  a.IdMarca = m.Id INNER JOIN CATEGORIAS c ON a.IdCategoria = c.Id LEFT JOIN IMAGENES i ON a.Id = i.IdArticulo");
+                // datos.setearProcedimiento("SP_Listar"); // SP_Listar es el nombre de procedimiento que creamos en DB
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
