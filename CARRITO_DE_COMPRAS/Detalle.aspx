@@ -7,7 +7,8 @@
     
               <div class="col">
                 <div class="card">
-                  <img style="max-width:300px;" src="<%:articulo.UrlImagen %>" class="card-img-top" alt="...">
+                    
+                  <img style="max-width:200px;" src="<%:articulo.UrlImagen %>" class="card-img-top" alt="...">
                   <div class="card-body">
 
                       <asp:Label ID="Label1" runat="server" Text="Nombre del producto "></asp:Label>
