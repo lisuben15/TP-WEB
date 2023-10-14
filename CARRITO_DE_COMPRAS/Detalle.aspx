@@ -9,7 +9,11 @@
         <div class="col d-flex justify-content-center">
             <div class="card">
 
-                <img style="max-width: 260px; max-height: 260px;" src="<%:articulo.UrlImagen %>" class="card-img-top" alt="...">
+                <img ID="cardCarousel" style="max-width: 260px; max-height: 260px;" src="<%:articulo.UrlImagen %>" class="card-img-top" alt="Imagen no disponible">
+                <div class=" justify-content-between">
+                    <asp:Button class="btn btn-info" style="color:white; margin-top: 20px;" ID="btnPreviousUrl" runat="server" Text="<" OnClick="btnPreviousUrl_Click" />
+                    <asp:Button class="btn btn-info" style="color:white; margin-top: 20px;" ID="btnNextUrl" runat="server" Text=">" OnClick="btnNextUrl_Click" />    
+                </div>
                 <div class="card-body">
 
                     <div style="display: flex; gap: 20px; margin-bottom: 20px; justify-content: center; align-items: center; flex-direction: column;">
@@ -52,7 +56,7 @@
             </div>
         </div>
 
-        <a class="btn btn-info" style="color:white; margin-top: 20px;" href="Default.aspx">regresar</a>
+        <a class="btn btn-info" style="color:white; margin-top: 20px;" href="Default.aspx">Regresar</a>
     </div>
 </asp:Content>
 

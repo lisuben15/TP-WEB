@@ -41,9 +41,9 @@
             <asp:Repeater ID="Repetidor2" runat="server">
                 <ItemTemplate>
                     <div class="col">
-                        <div class="card" style="width: 300px; height: 340px;">
+                        <div class="card" style="width: 300px; height: 340px">
                             <div class="row justify-content-center">
-                                <img style="max-width: 200px; max-height: 240px;" src="<%#Eval("UrlImagen") %>" class="card-img-top" alt="Imagen no disponible">
+                                <img style="max-width: 200px;" max-height: 240px;" src="<%#Eval("UrlImagen") %>" class="card-img-top" alt="Imagen no disponible">
                                 <div class="card-body">
                                     <h5 class="card-title"><%#Eval("Nombre") %> $<%#Eval("Precio") %> </h5>
                                     <div class="position-absolute bottom-0 end-0 mb-2 mr-5">

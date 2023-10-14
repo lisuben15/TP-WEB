@@ -14,13 +14,7 @@
           <div class="col ml-3px mt-5px">
             <div class="card" style="width:300px;height:400px">
               <div class="row justify-content-center">
-                <button class="carousel-control-prev-icon" aria-hidden="true" type="button"
-                  data-bs-target="#cardCarousel" data-bs-slide="prev">
-                </button>
-                <img style="width:250px; height: 200px; object-fit: cover;" src="<%#Eval(" UrlImagen") %>" class="card-img-top" alt="...">
-                <button class="carousel-control-next-icon" aria-hidden="true" type="button"
-                  data-bs-target="#cardCarousel" data-bs-slide="next">
-                </button>
+                <img style="width:250px; height: 200px; object-fit: cover;" src="<%#Eval(" UrlImagen") %>" class="card-img-top" alt="Imagen no disponible">
                 <div class="card-body">
                   <h5 class="card-title">
                     <%#Eval("Nombre") %>
