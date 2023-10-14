@@ -20,10 +20,9 @@ namespace CARRITO_DE_COMPRAS
             listaAux = new List<Articulo>();        
         }
         protected void Page_Load(object sender, EventArgs e)
-		{
+        {
             if (!IsPostBack)
             {
-
                 if (Session["listaCarrito"] != null)
                 {
                     listaCarrito = (List<Articulo>)Session["listaCarrito"];
@@ -38,40 +37,51 @@ namespace CARRITO_DE_COMPRAS
 
                     Repetidor2.DataSource = listaCarrito;
                     Repetidor2.DataBind();
+
+                    decimal total = listaCarrito.Sum(item => item.Precio);
+                    lblTotal.Text = "Total a Pagar: $" + total.ToString("0.00");
                 }
                 else
                 {
-                    listaCarrito = new List<Articulo>(); // justifica lo null
+                    listaCarrito = new List<Articulo>();
                 }
             }
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-
             string valor = ((Button)sender).CommandArgument;
-            
+
             listaCarrito = (List<Articulo>)Session["listaCarrito"];
             foreach (var item in listaCarrito)
             {
-                if(item.Codigo != valor)
+                if (item.Codigo != valor)
                 {
                     listaAux.Add(item);
                 }
             }
             Session["listaCarrito"] = listaAux;
+
+            // Recalcula el total
+            decimal total = listaAux.Sum(item => item.Precio);
+            lblTotal.Text = "Total a Pagar: $" + total.ToString("0.00");
+
             Response.Redirect("Carrito.aspx");
         }
+
         protected void btnEliminarUno_Click(object sender, EventArgs e)
         {
             string valor = ((Button)sender).CommandArgument;
 
             listaCarrito = (List<Articulo>)Session["listaCarrito"];
-            Articulo articulo = new Articulo();
-
-            articulo = listaCarrito.Find(x => x.Codigo == valor);
+            Articulo articulo = listaCarrito.Find(x => x.Codigo == valor);
 
             listaCarrito.Remove(articulo);
+
+            // Recalcula el total
+            decimal total = listaCarrito.Sum(item => item.Precio);
+            lblTotal.Text = "Total a Pagar: $" + total.ToString("0.00");
+
             Response.Redirect("Carrito.aspx");
         }
     }
