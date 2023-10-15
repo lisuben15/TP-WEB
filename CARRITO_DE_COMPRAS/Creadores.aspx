@@ -3,10 +3,12 @@
     <style>
         .page-container {
             text-align: center;
+            font-size: 20px; 
         }
 
         .carrito-title {
             color: white;
+            font-size: 70px;
         }
 
         .regresar-button {
@@ -33,7 +35,7 @@
         .creadores-text {
             font-size: 24px;
             font-weight: bold;
-            color: #007bff;
+            color: deeppink;
             margin-top: 20px;
         }
     </style>
