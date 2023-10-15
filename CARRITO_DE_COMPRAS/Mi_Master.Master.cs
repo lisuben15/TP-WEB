@@ -12,10 +12,10 @@ namespace CARRITO_DE_COMPRAS
 {
     public partial class Mi_Master : System.Web.UI.MasterPage
     {
-
+        List<Articulo> listaCarrito {  get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Articulo> listaCarrito = (List<Articulo>)Session["listaCarrito"];
+            listaCarrito = (List<Articulo>)Session["listaCarrito"];
             if (Session["listaCarrito"] == null)
             {
                 CartItemsCount.Text = "0";
@@ -31,5 +31,19 @@ namespace CARRITO_DE_COMPRAS
             Response.Redirect("Carrito.aspx");
         }
 
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+           string Palabra = txtBusqueda.Text;
+            ServicioArticulo servicioArticulo = new ServicioArticulo();
+            Session["listaArticulo"] = servicioArticulo.FiltrarArticulos(Palabra);          
+            Response.Redirect("Default.aspx");
+
+        }
+
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Session["listaArticulo"] = null;
+            Response.Redirect("Default.aspx");
+        }
     }
 }

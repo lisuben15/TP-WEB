@@ -29,6 +29,12 @@ namespace CARRITO_DE_COMPRAS
                 Repetidor1.DataSource = ListaArticulo;
                 Repetidor1.DataBind();
             }
+            if(Session["listaArticulo"] != null)
+            {
+                ListaArticulo = (List<Articulo>)Session["listaArticulo"];
+                Repetidor1.DataSource = ListaArticulo;
+                Repetidor1.DataBind();
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)

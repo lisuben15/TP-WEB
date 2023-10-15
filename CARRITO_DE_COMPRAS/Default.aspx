@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mi_Master.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs"
-  Inherits="CARRITO_DE_COMPRAS.Página1" %>
+  Inherits="CARRITO_DE_COMPRAS.Página1" EnableEventValidation="false" %>
   <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 
