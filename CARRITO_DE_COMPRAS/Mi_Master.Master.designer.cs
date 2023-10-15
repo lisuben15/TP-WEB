@@ -51,6 +51,15 @@ namespace CARRITO_DE_COMPRAS
         protected global::System.Web.UI.WebControls.Button btnCarrito;
 
         /// <summary>
+        /// Control hypCreadores.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hypCreadores;
+
+        /// <summary>
         /// Control ContentPlaceHolder1.
         /// </summary>
         /// <remarks>
