@@ -39,11 +39,19 @@ namespace CARRITO_DE_COMPRAS
                     Repetidor2.DataBind();
 
                     decimal total = listaCarrito.Sum(item => item.Precio);
-                    lblTotal.Text = "Total a Pagar: $" + total.ToString("0.00");
+                    if (total > 0)
+                    {
+                        lblTotal.Text = "Total a Pagar: $" + total.ToString("0.00");
+                    }
+                    else
+                    {
+                        lblTotal.Text = "Aun no registras compras.";
+                    }
                 }
                 else
                 {
                     listaCarrito = new List<Articulo>();
+                     lblTotal.Text = "Aun no registras compras.";
                 }
             }
         }
